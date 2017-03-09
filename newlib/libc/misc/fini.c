@@ -13,7 +13,14 @@
 /* Handle ELF .{pre_init,init,fini}_array sections.  */
 #include <sys/types.h>
 
-#ifdef HAVE_INITFINI_ARRAY
+/* ---------------------------------------------------------------------------*/
+/* bareflank: start                                                           */
+/* ---------------------------------------------------------------------------*/
+/* we have our own C runtime                                                  */
+#if 0
+/* ---------------------------------------------------------------------------*/
+/* bareflank: end                                                             */
+/* ---------------------------------------------------------------------------*/
 extern void (*__fini_array_start []) (void) __attribute__((weak));
 extern void (*__fini_array_end []) (void) __attribute__((weak));
 

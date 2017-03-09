@@ -274,7 +274,13 @@ int	_EXFUN(vscanf, (const char *, __VALIST)
 int	_EXFUN(vsscanf, (const char *__restrict, const char *__restrict, __VALIST)
                _ATTRIBUTE ((__format__ (__scanf__, 2, 0))));
 #endif
-#if __GNU_VISIBLE
+/* ---------------------------------------------------------------------------*/
+/* bareflank: start                                                           */
+/* ---------------------------------------------------------------------------*/
+#if 1
+/* ---------------------------------------------------------------------------*/
+/* bareflank: end                                                             */
+/* ---------------------------------------------------------------------------*/
 int	_EXFUN(asprintf, (char **__restrict, const char *__restrict, ...)
                _ATTRIBUTE ((__format__ (__printf__, 2, 3))));
 int	_EXFUN(vasprintf, (char **, const char *, __VALIST)
