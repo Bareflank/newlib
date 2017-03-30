@@ -274,7 +274,13 @@ int	_EXFUN(vscanf, (const char *, __VALIST)
 int	_EXFUN(vsscanf, (const char *__restrict, const char *__restrict, __VALIST)
                _ATTRIBUTE ((__format__ (__scanf__, 2, 0))));
 #endif
-#if __GNU_VISIBLE
+/* ---------------------------------------------------------------------------*/
+/* bareflank: start                                                           */
+/* ---------------------------------------------------------------------------*/
+#if 1
+/* ---------------------------------------------------------------------------*/
+/* bareflank: end                                                             */
+/* ---------------------------------------------------------------------------*/
 int	_EXFUN(asprintf, (char **__restrict, const char *__restrict, ...)
                _ATTRIBUTE ((__format__ (__printf__, 2, 3))));
 int	_EXFUN(vasprintf, (char **, const char *, __VALIST)
@@ -645,7 +651,7 @@ FILE *_EXFUN(_fopencookie_r,(struct _reent *, void *__cookie,
 
 #ifndef __CUSTOM_FILE_IO__
 /*
- * The __sfoo macros are here so that we can 
+ * The __sfoo macros are here so that we can
  * define function versions in the C library.
  */
 #define       __sgetc_raw_r(__ptr, __f) (--(__f)->_r < 0 ? __srget_r(__ptr, __f) : (int)(*(__f)->_p++))
@@ -654,7 +660,7 @@ FILE *_EXFUN(_fopencookie_r,(struct _reent *, void *__cookie,
 /*  For a platform with CR/LF, additional logic is required by
   __sgetc_r which would otherwise simply be a macro; therefore we
   use an inlined function.  The function is only meant to be inlined
-  in place as used and the function body should never be emitted.  
+  in place as used and the function body should never be emitted.
 
   There are two possible means to this end when compiling with GCC,
   one when compiling with a standard C99 compiler, and for other

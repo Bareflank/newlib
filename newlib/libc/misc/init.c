@@ -13,7 +13,13 @@
 /* Handle ELF .{pre_init,init,fini}_array sections.  */
 #include <sys/types.h>
 
-#ifdef HAVE_INITFINI_ARRAY
+/* ---------------------------------------------------------------------------*/
+/* bareflank: start                                                           */
+/* ---------------------------------------------------------------------------*/
+#if 0
+/* ---------------------------------------------------------------------------*/
+/* bareflank: end                                                             */
+/* ---------------------------------------------------------------------------*/
 
 /* These magic symbols are provided by the linker.  */
 extern void (*__preinit_array_start []) (void) __attribute__((weak));
